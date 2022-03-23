@@ -33,18 +33,27 @@ def choose():
 
 
 def computer():
+    # Referencing the global variables so the function can update them
     global win_switch
     global win_no_switch
     options = [1, 2, 3]
+    # Picking a random number to be the "car"
     car = random.randint(1,3)
+    # Removing the winner from the list
     for x in options:
         if x == car:
             options.remove(x)
+    # Randomly picking a number to simulate the "contestant"
     firstChosen = random.randint(1, 3)
+    # 50 50 of whether you switch or don't switch
     decision = random.randint(0,1)
+    # Checking for a win and updating variables
+    # Decision being 0 means no switch; if the original choice was car, this is a win
     if decision == 0:
         if firstChosen == car:
             win_no_switch +=1
+    # Decision being 1 means switch
+    # User knows one choice is goat, so as long as original choice wasn't car, switching wins
     if decision == 1:
         if firstChosen != car:
             win_switch +=1
