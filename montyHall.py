@@ -3,6 +3,7 @@ import random
 win_no_switch = 0
 win_switch = 0
 
+
 def choose():
     options = [1, 2, 3]
     car = random.randint(1, 3)
@@ -66,7 +67,6 @@ def testerComputer():
     for i in range(0, x):
         for i in range(0, y):
             computer()
-        print(win_switch, win_no_switch)
         total += win_switch/win_no_switch
     average = total/x
     print("The average ratio of winning with switching to winning without switching was " + str(average))
